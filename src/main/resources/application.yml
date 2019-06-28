@@ -1,0 +1,18 @@
+
+
+spring:
+  datasource:
+    url: jdbc:postgresql://192.168.1.1:5432/postgre
+    username: root
+    password: root
+    driver-class-name: org.postgresql.Driver
+
+server:
+  port: 8580
+csv:
+  file:
+    #csv文件路径
+    path: C:\Users\HP\Desktop\test.csv
+    #csv文件的表头
+    title: anyou,caseNo,court,resultAmount,resultDataType,resultEntryId,resultLevel,resultName,resultSummary,resultYmd
+
