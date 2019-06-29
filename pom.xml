@@ -54,10 +54,10 @@
         </dependency>
 
         <!--数据库相关-->
-        <!--<dependency>
+        <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-        </dependency>-->
+        </dependency>
         <!--pgSQL相关依赖-->
         <dependency>
             <groupId>org.postgresql</groupId>

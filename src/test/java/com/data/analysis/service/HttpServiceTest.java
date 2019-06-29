@@ -1,4 +1,4 @@
-package com.data.analysis.scheduled;
+package com.data.analysis.service;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -8,13 +8,13 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class AsyncTaskTest {
+public class HttpServiceTest {
 
+    @Autowired
+    HttpService httpService;
 
     @Test
-    public void oprate() throws Exception {
-       /* for(int i=0;i<=10;i++) {
-            asyncTask.doTask11();
-        }*/
+    public void  litigationRelated(){
+        httpService.getLitigationRelated(1);
     }
 }

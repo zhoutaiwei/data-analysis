@@ -18,14 +18,45 @@ import java.util.List;
 @Slf4j
 public class CSVMapper {
 
-    @Value("${csv.file.path}")
-    private String path;
+    @Value("${csv.file.company-case-path}")
+    private String companyCasePath;
+    @Value("${csv.file.litigation-related-path}")
+    private String litigationRelatedPath;
 
-    @Value("${csv.file.title}")
-    private String title;
 
+    @Value("${csv.file.company-case-title}")
+    private String companyCaseTitle;
+
+
+    @Value("${csv.file.litigation-related-title}")
+    private String litigationRelatedTitle;
+
+    /**
+     * 写入涉案数据
+     * @param values
+     */
     @Async
-    public void writeCSVFile(List<String[]> values){
+    public void  writeLitigationRelatedCSVFile(List<String[]> values){
+        writeCSVFile(litigationRelatedPath,litigationRelatedTitle,values);
+    }
+
+
+    /**
+     * 写入公司案件数据
+     */
+    @Async
+    public void  writeCompanyCaseCSVFile(List<String[]> values){
+        writeCSVFile(companyCasePath,companyCaseTitle,values);
+    }
+
+
+    /**
+     * 负责写入文件
+     * @param path
+     * @param title
+     * @param values
+     */
+    public void writeCSVFile(String path,String title,List<String[]> values){
 
         CsvWriter cw = null;
         String[] header = title.split(",");
@@ -38,7 +69,6 @@ public class CSVMapper {
                 cw.writeRecord(header);
                 cw.close();
             }
-
             //追加文件内容
             BufferedWriter out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(path, true), "GBK"), 1024);
             cw = new CsvWriter(out, ',');
