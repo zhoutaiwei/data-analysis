@@ -22,17 +22,43 @@ public class CSVMapper {
     private String companyCasePath;
     @Value("${csv.file.litigation-related-path}")
     private String litigationRelatedPath;
+    @Value("${csv.file.revenue-related-path}")
+    private String revenueRelatedPath;
+    @Value("${csv.file.env-protection-path}")
+    private String envProtectionPath;
 
 
     @Value("${csv.file.company-case-title}")
     private String companyCaseTitle;
-
-
     @Value("${csv.file.litigation-related-title}")
     private String litigationRelatedTitle;
+    @Value("${csv.file.revenue-related-title}")
+    private String revenueRelatedTitle;
+    @Value("${csv.file.env-protection-title}")
+    private String envProtectionTitle;
+
 
     /**
-     * 写入涉案数据
+     * 写入环保数据
+     * @param values
+     */
+    @Async
+    public void  writeEnvProtectionCSVFile(List<String[]> values){
+        writeCSVFile(envProtectionPath,envProtectionTitle,values);
+    }
+
+
+    /**
+     * 写入涉税数据
+     * @param values
+     */
+    @Async
+    public void  writeRevenueRelatedCSVFile(List<String[]> values){
+        writeCSVFile(revenueRelatedPath,revenueRelatedTitle,values);
+    }
+
+    /**
+     * 写入涉诉数据
      * @param values
      */
     @Async
@@ -42,7 +68,7 @@ public class CSVMapper {
 
 
     /**
-     * 写入公司案件数据
+     * 写入公司涉案数据
      */
     @Async
     public void  writeCompanyCaseCSVFile(List<String[]> values){

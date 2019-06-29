@@ -13,7 +13,7 @@ import java.util.List;
 @Repository
 public interface DBMapper {
     /**
-     * 将CompanyCase数据插入数据库
+     * 将涉案数据插入数据库
      * @param entitys
      * @return
      */
@@ -28,4 +28,19 @@ public interface DBMapper {
     @InsertProvider(type = Provider.class,method = "insertLitigationRelated")
     int insertLitigationRelated(@Param("list") List<LitigationRelatedEntity> entitys);
 
+    /**
+     * 将涉税数据插入数据库
+     * @param entitys
+     * @return
+     */
+    @InsertProvider(type = Provider.class,method = "insertRevenueRelated")
+    int inserRevenueRelated(@Param("list") List<LitigationRelatedEntity> entitys);
+
+    /**
+     * 将涉税数据插入数据库
+     * @param entitys
+     * @return
+     */
+    @InsertProvider(type = Provider.class,method = "insertdEnvProtection")
+    int insertdEnvProtection(@Param("list") List<LitigationRelatedEntity> entitys);
 }

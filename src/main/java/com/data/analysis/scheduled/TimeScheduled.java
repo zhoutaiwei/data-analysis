@@ -38,7 +38,7 @@ public class TimeScheduled {
     }
 
     // 定义每过10秒执行处理涉诉标准数据数据任务
-    @Scheduled(fixedRate = 100000)
+  //  @Scheduled(fixedRate = 100000)
     public void ExecuteLitigationRelatedTask() throws Exception {
         log.info("开始执行处理任务...");
         long start = System.currentTimeMillis();
@@ -50,8 +50,30 @@ public class TimeScheduled {
         log.info("本次任务共耗时:{} 毫秒",end-start);
     }
 
-
-
+    // 定义每过10秒执行处理涉税标准数据数据任务
+   // @Scheduled(fixedRate = 100000)
+    public void ExecuteRevenueRelatedTask() throws Exception {
+        log.info("开始执行处理任务...");
+        long start = System.currentTimeMillis();
+        //获取总页数
+        int totalCount = dataService.getRevenueRelatedTotalPage();
+        //执行多线程任务
+        executer(DataTypeConstant.REVENUE_RELATED,totalCount);
+        long end = System.currentTimeMillis();
+        log.info("本次任务共耗时:{} 毫秒",end-start);
+    }
+    // 定义每过10秒执行处理环保标准数据数据任务
+    @Scheduled(fixedRate = 100000)
+    public void ExecuteEnvProtectiondTask() throws Exception {
+        log.info("开始执行处理任务...");
+        long start = System.currentTimeMillis();
+        //获取总页数
+        int totalCount = dataService.getEnvProtectionTotalPage();
+        //执行多线程任务
+        executer(DataTypeConstant.ENV_PROTECTION,totalCount);
+        long end = System.currentTimeMillis();
+        log.info("本次任务共耗时:{} 毫秒",end-start);
+    }
 
 
     /**

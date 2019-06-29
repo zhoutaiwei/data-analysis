@@ -1,6 +1,7 @@
 package com.data.analysis.mapper;
 
 import com.data.analysis.entity.CompanyCaseEntity;
+import com.data.analysis.entity.LitigationRelatedEntity;
 
 import java.text.MessageFormat;
 import java.util.List;
@@ -15,7 +16,7 @@ public class Provider {
      */
     public String insertCompanyCase(Map map) {
 
-        List<CompanyCaseEntity> students = (List<CompanyCaseEntity>) map.get("list");
+        List<CompanyCaseEntity> datas = (List<CompanyCaseEntity>) map.get("list");
         StringBuilder sb = new StringBuilder();
         sb.append("INSERT INTO company")
         .append("(anyou,case_no,court,result_amount," +
@@ -36,9 +37,9 @@ public class Provider {
                 "#'{'list[{0}].resultYmd}, " +
                 "#'{'list[{0}].createdBy}, " +
                 "#'{'list[{0}].createTime})");
-        for (int i = 0; i < students.size(); i++) {
+        for (int i = 0; i < datas.size(); i++) {
             sb.append(mf.format(new Object[]{i}));
-            if (i < students.size() - 1) sb.append(",");
+            if (i < datas.size() - 1) sb.append(",");
         }
         return sb.toString();
     }
@@ -49,7 +50,7 @@ public class Provider {
      * @return
      */
     public String insertLitigationRelated(Map map) {
-        List<CompanyCaseEntity> students = (List<CompanyCaseEntity>) map.get("list");
+        List<LitigationRelatedEntity> datas = (List<LitigationRelatedEntity>) map.get("list");
         StringBuilder sb = new StringBuilder();
         sb.append("INSERT INTO litigation_related")
                 .append("(body,data_type,entry_id,sort_time,sort_time_string,title,created_by,create_time)")
@@ -63,11 +64,65 @@ public class Provider {
                 "#'{'list[{0}].title}, " +
                 "#'{'list[{0}].createdBy}, " +
                 "#'{'list[{0}].createTime})");
-        for (int i = 0; i < students.size(); i++) {
+        for (int i = 0; i < datas.size(); i++) {
             sb.append(mf.format(new Object[]{i}));
-            if (i < students.size() - 1) sb.append(",");
+            if (i < datas.size() - 1) sb.append(",");
         }
         return sb.toString();
     }
 
+    /**
+     * 拼接RevenueRelated插入语句
+     * @param map
+     * @return
+     */
+    public String insertRevenueRelated(Map map) {
+        List<LitigationRelatedEntity> datas = (List<LitigationRelatedEntity>) map.get("list");
+        StringBuilder sb = new StringBuilder();
+        sb.append("INSERT INTO revenue_related")
+                .append("(body,data_type,entry_id,sort_time,sort_time_string,title,created_by,create_time)")
+                .append("VALUES ");
+        MessageFormat mf = new MessageFormat("(" +
+                "#'{'list[{0}].body}, " +
+                "#'{'list[{0}].dataType}, " +
+                "#'{'list[{0}].entryId}, " +
+                "#'{'list[{0}].sortTime }, " +
+                "#'{'list[{0}].sortTimeString}," +
+                "#'{'list[{0}].title}, " +
+                "#'{'list[{0}].createdBy}, " +
+                "#'{'list[{0}].createTime})");
+        for (int i = 0; i < datas.size(); i++) {
+            sb.append(mf.format(new Object[]{i}));
+            if (i < datas.size() - 1) sb.append(",");
+        }
+        return sb.toString();
+    }
+
+    /**
+     * 拼接EnvProtection插入语句
+     * @param map
+     * @return
+     */
+    public String insertdEnvProtection(Map map) {
+        List<LitigationRelatedEntity> datas = (List<LitigationRelatedEntity>) map.get("list");
+        StringBuilder sb = new StringBuilder();
+        sb.append("INSERT INTO env_protection")
+                .append("(body,data_type,entry_id,sort_time,sort_time_string,title,created_by,create_time)")
+                .append("VALUES ");
+        MessageFormat mf = new MessageFormat("(" +
+                "#'{'list[{0}].body}, " +
+                "#'{'list[{0}].dataType}, " +
+                "#'{'list[{0}].entryId}, " +
+                "#'{'list[{0}].sortTime }, " +
+                "#'{'list[{0}].sortTimeString}," +
+                "#'{'list[{0}].title}, " +
+                "#'{'list[{0}].createdBy}, " +
+                "#'{'list[{0}].createTime})");
+        for (int i = 0; i < datas.size(); i++) {
+            sb.append(mf.format(new Object[]{i}));
+            if (i < datas.size() - 1) sb.append(",");
+        }
+        System.out.println(sb.toString());
+        return sb.toString();
+    }
 }

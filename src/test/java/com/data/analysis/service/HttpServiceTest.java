@@ -1,5 +1,6 @@
 package com.data.analysis.service;
 
+import com.alibaba.fastjson.JSONObject;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,5 +17,11 @@ public class HttpServiceTest {
     @Test
     public void  litigationRelated(){
         httpService.getLitigationRelated(1);
+    }
+
+    @Test
+    public void  getRevenueRelated(){
+        JSONObject related = httpService.getRevenueRelated(1);
+        System.out.println(related);
     }
 }

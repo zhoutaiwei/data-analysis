@@ -42,10 +42,15 @@ public class AsyncTask {
             case DataTypeConstant.LITIGATION_RELATED:
                 dataHandleService.litigationRelatedTask(pageNo);
                 break;
+            case DataTypeConstant.REVENUE_RELATED:
+                dataHandleService.revenueRelatedTask(pageNo);
+                break;
+            case DataTypeConstant.ENV_PROTECTION:
+                dataHandleService.envProtectionTask(pageNo);
+                break;
+            default:
+                log.info("没有此模块！！！");
         }
-
-
-
         long end = System.currentTimeMillis();
         log.info("当前线程号："+Thread.currentThread().getId()+"--耗时:" + (end - start) + "毫秒");
     }
