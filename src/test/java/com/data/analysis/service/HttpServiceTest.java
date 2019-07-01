@@ -12,7 +12,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class HttpServiceTest {
 
     @Autowired
-    HttpService httpService;
+    CompanyQueryService httpService;
 
     @Test
     public void  litigationRelated(){
@@ -22,6 +22,11 @@ public class HttpServiceTest {
     @Test
     public void  getRevenueRelated(){
         JSONObject related = httpService.getRevenueRelated(1);
+        System.out.println(related);
+    }
+    @Test
+    public void  getEnvProtection(){
+        JSONObject related = httpService.getEnvProtection(1);
         System.out.println(related);
     }
 }

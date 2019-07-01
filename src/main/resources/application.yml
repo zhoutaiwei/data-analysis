@@ -13,6 +13,41 @@ server:
   port: 8580
 csv:
   file:
+    epbparty-path: C:\Users\HP\Desktop\epbparty.csv
+    epbparty-title:
+    epbparty_jkqy-path: C:\Users\HP\Desktop\epbparty_jkqy.csv
+    epbparty_jkqy-title:
+    epbparty_zxjc-path: C:\Users\HP\Desktop\epbparty_zxjc.csv
+    epbparty_zxjc-title:
+    satparty_qs-path: C:\Users\HP\Desktop\satparty_qs.csv
+    satparty_qs-title:
+    satparty_chufa-path: C:\Users\HP\Desktop\satparty_chufa.csv
+    satparty_chufa-title:
+    satparty_xin-path: C:\Users\HP\Desktop\satparty_xin.csv
+    satparty_xin-title:
+    satparty_reg-path: C:\Users\HP\Desktop\satparty_reg.csv
+    satparty_reg-title:
+    satparty_xuke-path: C:\Users\HP\Desktop\satparty_xuke.csv
+    satparty_xuke-title:
+    cpws-path: C:\Users\HP\Desktop\cpws.csv
+    cpws-title:
+    ktgg-path: C:\Users\HP\Desktop\ktgg.csv
+    ktgg-title:
+    zxgg-path: C:\Users\HP\Desktop\zxgg.csv
+    zxgg-title:
+    shixin-path: C:\Users\HP\Desktop\shixin.csv
+    shixin-title:
+    fygg-path: C:\Users\HP\Desktop\fygg.csv
+    fygg-title:
+    ajlc-path: C:\Users\HP\Desktop\ajlc.csv
+    ajlc-title:
+    bgt-path: C:\Users\HP\Desktop\bgt.csv
+    bgt-title:
+    sifacdk-path: C:\Users\HP\Desktop\sifacdk.csv
+    sifacdk-title:
+
+
+
     company-case-path: C:\Users\HP\Desktop\company-case.csv
     company-case-title: anyou,case_noo,court,result_amount,result_data_type,result_entry_id,result_level,result_name,result_summary,result_ymd
     litigation-related-path: C:\Users\HP\Desktop\litigation-related.csv
