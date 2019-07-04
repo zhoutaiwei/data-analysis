@@ -1,6 +1,7 @@
 package com.data.analysis.utils;
 
 import com.alibaba.fastjson.JSONObject;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpStatus;
 import org.apache.http.client.config.RequestConfig;
@@ -18,12 +19,14 @@ import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.net.URI;
+import java.net.URLDecoder;
 import java.util.Map;
 
 /**
  * HttpClient4.3工具类
  * @author
  */
+@Slf4j
 public class HttpClientUtils
 {
     private static Logger logger = LoggerFactory.getLogger(HttpClientUtils.class); // 日志记录
@@ -33,7 +36,7 @@ public class HttpClientUtils
     static
     {
         // 设置请求和传输超时时间
-        requestConfig = RequestConfig.custom().setSocketTimeout(10000).setConnectTimeout(5000).build();
+        requestConfig = RequestConfig.custom().setSocketTimeout(10000).setConnectTimeout(10000).build();
     }
 
     public static String doGet(String url, Map<String, String> param) {
@@ -51,7 +54,7 @@ public class HttpClientUtils
                 }
             }
             URI uri = builder.build();
-
+           // log.info("请求路径：{}",URLDecoder.decode(uri.toASCIIString(), "UTF-8"));
             // 创建http GET请求
             HttpGet httpGet = new HttpGet(uri);
             httpGet.setConfig(requestConfig);
@@ -62,7 +65,7 @@ public class HttpClientUtils
                 resultString = EntityUtils.toString(response.getEntity(), "UTF-8");
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error("請求異常：{}",e);
         } finally {
             try {
                 if (response != null) {

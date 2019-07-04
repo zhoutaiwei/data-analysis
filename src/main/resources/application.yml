@@ -14,21 +14,21 @@ server:
 csv:
   file:
     epbparty-path: C:\Users\HP\Desktop\epbparty.csv
-    epbparty-title:
-    epbparty_jkqy-path: C:\Users\HP\Desktop\epbparty_jkqy.csv
-    epbparty_jkqy-title:
-    epbparty_zxjc-path: C:\Users\HP\Desktop\epbparty_zxjc.csv
-    epbparty_zxjc-title:
-    satparty_qs-path: C:\Users\HP\Desktop\satparty_qs.csv
-    satparty_qs-title:
-    satparty_chufa-path: C:\Users\HP\Desktop\satparty_chufa.csv
-    satparty_chufa-title:
-    satparty_xin-path: C:\Users\HP\Desktop\satparty_xin.csv
-    satparty_xin-title:
-    satparty_reg-path: C:\Users\HP\Desktop\satparty_reg.csv
-    satparty_reg-title:
-    satparty_xuke-path: C:\Users\HP\Desktop\satparty_xuke.csv
-    satparty_xuke-title:
+    epbparty-title: authority,body,caseNo,dataType,epbpartyId,eventLevel,eventName,eventResult,eventYiju,legalRepresentative,money,pname,postTime,sortTime,title
+    epbparty-jkqy-path: C:\Users\HP\Desktop\epbparty-jkqy.csv
+    epbparty-jkqy-title: eventName,eventType,dataType,epbparty_jkqyId,pname
+    epbparty-zxjc-path: C:\Users\HP\Desktop\epbparty-zxjc.csv
+    epbparty-zxjc-title: epbparty_zxjcId,creditNo,dealWay,dealWhere,density,eventResult,monitorWay,pname,pollutant,sortTime,standard,station,dataType
+    satparty-qs-path: C:\Users\HP\Desktop\satparty-qs.csv
+    satparty-qs-title:
+    satparty-chufa-path: C:\Users\HP\Desktop\satparty-chufa.csv
+    satparty-chufa-title:
+    satparty-xin-path: C:\Users\HP\Desktop\satparty-xin.csv
+    satparty-xin-title:
+    satparty-reg-path: C:\Users\HP\Desktop\satparty-reg.csv
+    satparty-reg-title:
+    satparty-xuke-path: C:\Users\HP\Desktop\satparty-xuke.csv
+    satparty-xuke-title:
     cpws-path: C:\Users\HP\Desktop\cpws.csv
     cpws-title:
     ktgg-path: C:\Users\HP\Desktop\ktgg.csv

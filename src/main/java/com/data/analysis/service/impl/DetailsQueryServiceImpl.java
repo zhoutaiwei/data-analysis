@@ -1,11 +1,14 @@
 package com.data.analysis.service.impl;
 
+import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.data.analysis.constant.DataTypeConstant;
 import com.data.analysis.service.CompanyQueryService;
 import com.data.analysis.service.DetailsQueryService;
+import com.data.analysis.utils.SignUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
@@ -17,27 +20,58 @@ public class DetailsQueryServiceImpl implements DetailsQueryService {
     @Autowired
     CompanyQueryService companyQueryService;
 
-    String uri ="https://api.fahaicc.com/v2/entry/epbparty";
+    /**
+     * baseURI
+     */
+    private  String baseUrl = "http://monitor.fahaicc.com/request";
+
 
     @Override
-    public JSONObject getEPDetailsQueryData(String entityId) {
-        //构建参数
+    public void  getEPDetailsQueryData(String entityId,String dataType) {
+        baseUrl=baseUrl+dataType;
         Map<String, String> paramMap = new HashMap<>();
         paramMap.put("authCode",DataTypeConstant.authCOde);
         String rt = String.valueOf(System.currentTimeMillis());
         paramMap.put("rt",rt);
-        String autoCode = DataTypeConstant.authCOde;
+        String sign = SignUtil.getSign(DataTypeConstant.authCOde,rt);
+        paramMap.put("sign",sign);
+        paramMap.put("id",entityId);
+        JSONObject result = companyQueryService.getDataByHttp(baseUrl,paramMap);
+        System.out.println(result.toJSONString());
+        //构建参数
+/*        Map<String, String> paramMap = new HashMap<>();
+        String rt = String.valueOf(System.currentTimeMillis());
+        paramMap.put("rt",rt);
         String uid = DataTypeConstant.uid;
-        return companyQueryService.getDataByHttp(uri,paramMap);
+        paramMap.put("uid",uid);
+        String sign = SignUtil.getSign(DataTypeConstant.uid,DataTypeConstant.authCOde,rt);
+        paramMap.put("sign",sign);
+        paramMap.put("api","result");
+        paramMap.put("action","detailed");
+        JSONObject args = new JSONObject();
+        args.put("resultDataType",dataType);
+       // args.put("resultEntryId",entityId);
+        args.put("range","20");
+        args.put("pageno","3");
+        paramMap.put("args",args.toJSONString());
+        JSONObject result = companyQueryService.getDataByHttp(baseUrl,paramMap);
+        if(result!=null) {
+            JSONArray results = result.getJSONArray("allList");
+            //将数据写入文件
+            writeFile(dataType, results);
+        }*/
     }
 
     /**
-     * 根据数据类型写入不同的库
+     * 根据数据类型写入文件中
      * @param dataType
-     * @param result
+     * @param results
      */
     @Override
-    public void writeFileAndDB(String dataType, JSONObject result) {
+    public void writeFile(String dataType, JSONArray results) {
+        for (int i=0;i<results.size();i++){
+
+        }
         switch (dataType){
             case DataTypeConstant.EPBPARTY:
                 break;
@@ -75,7 +109,6 @@ public class DetailsQueryServiceImpl implements DetailsQueryService {
                 break;
             default:
                 break;
-
 
         }
     }

@@ -32,7 +32,7 @@ public class TimeScheduled {
         //获取总页数
         int totalCount = dataService.getTotalPage();
         //执行多线程任务
-        executer(DataTypeConstant.COMPANY_CASE,totalCount);
+        executer(totalCount);
         long end = System.currentTimeMillis();
         log.info("本次任务共耗时:{} 毫秒",end-start);
     }
@@ -80,14 +80,14 @@ public class TimeScheduled {
      * //执行多线程任务
      * @param totalCount
      */
-    public void executer(String dataType,int totalCount){
+    public void executer(int totalCount){
         if(totalCount<=0){
             log.info("调用接口返回结果失败！获取数据总页数失败。");
             return;
         }
         //开始调度多线程任务
         for(int i=1;i<=totalCount;i++) {
-            asyncTask.doTask(dataType,i);
+            asyncTask.doTask(i);
         }
     }
 }

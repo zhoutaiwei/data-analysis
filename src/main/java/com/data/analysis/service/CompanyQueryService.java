@@ -28,4 +28,9 @@ public interface CompanyQueryService {
      * @return
      */
     JSONObject getDataByHttp(String uri, Map<String, String> param);
+
+    /**
+     * 獲取已添加的企業集合
+     */
+    void getCustomerGroupList();
 }

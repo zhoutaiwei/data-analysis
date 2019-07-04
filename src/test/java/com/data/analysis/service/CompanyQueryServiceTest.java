@@ -1,32 +1,29 @@
 package com.data.analysis.service;
 
 import com.alibaba.fastjson.JSONObject;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.stereotype.Service;
 import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class HttpServiceTest {
+@Slf4j
+public class CompanyQueryServiceTest {
 
     @Autowired
     CompanyQueryService httpService;
 
-    @Test
+   @Test
     public void  litigationRelated(){
-        httpService.getLitigationRelated(1);
+      log.info("返回结果为{}", httpService.getStandardDataByPageNo(3));
+    }
+    @Test
+    public void  getCustomerGroupList(){
+        httpService.getCustomerGroupList();
     }
 
-    @Test
-    public void  getRevenueRelated(){
-        JSONObject related = httpService.getRevenueRelated(1);
-        System.out.println(related);
-    }
-    @Test
-    public void  getEnvProtection(){
-        JSONObject related = httpService.getEnvProtection(1);
-        System.out.println(related);
-    }
 }

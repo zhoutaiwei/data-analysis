@@ -18,71 +18,128 @@ import java.util.List;
 @Slf4j
 public class CSVMapper {
 
-    @Value("${csv.file.company-case-path}")
-    private String companyCasePath;
-    @Value("${csv.file.litigation-related-path}")
-    private String litigationRelatedPath;
-    @Value("${csv.file.revenue-related-path}")
-    private String revenueRelatedPath;
-    @Value("${csv.file.env-protection-path}")
-    private String envProtectionPath;
+    @Value("${csv.file.epbparty-path}")
+    private String epbpartyPath;
+    @Value("${csv.file.epbparty-jkqy-path}")
+    private String epbpartyJkqyPath;
+    @Value("${csv.file.epbparty-zxjc-path}")
+    private String epbpartyZxjcPath;
+    @Value("${csv.file.satparty-qs-path}")
+    private String satpartyQsPath;
+    @Value("${csv.file.satparty-chufa-path}")
+    private String  satpartyChufaPath;
+    @Value("${csv.file.satparty-xin-path}")
+    private String satpartyXinPath;
+    @Value("${csv.file.satparty-reg-path}")
+    private String satpartyRegPath;
+    @Value("${csv.file.satparty-xuke-path}")
+    private String satpartyXukePath;
+    @Value("${csv.file.cpws-path}")
+    private String cpwsPath;
+    @Value("${csv.file.ktgg-path}")
+    private String ktggPath;
+    @Value("${csv.file.zxgg-path}")
+    private String zxggPath;
+    @Value("${csv.file.shixin-path}")
+    private String shixinPath;
+    @Value("${csv.file.fygg-path}")
+    private String fyggPath;
+    @Value("${csv.file.ajlc-path}")
+    private String ajlcPath;
+    @Value("${csv.file.bgt-path}")
+    private String bgtPath;
+    @Value("${csv.file.sifacdk-path}")
+    private String sifacdkPath;
+
+    @Value("${csv.file.epbparty-title}")
+    private String epbpartyTitle;
+    @Value("${csv.file.epbparty-jkqy-title}")
+    private String epbpartyJkqyTitle;
+    @Value("${csv.file.epbparty-zxjc-title}")
+    private String epbpartyZxjcTitle;
+    @Value("${csv.file.satparty-qs-title}")
+    private String satpartyQsTitle;
+    @Value("${csv.file.satparty-chufa-title}")
+    private String  satpartyChufaTitle;
+    @Value("${csv.file.satparty-xin-title}")
+    private String satpartyXinTitle;
+    @Value("${csv.file.satparty-reg-title}")
+    private String satpartyRegTitle;
+    @Value("${csv.file.satparty-xuke-title}")
+    private String satpartyXukeTitle;
+    @Value("${csv.file.cpws-title}")
+    private String cpwsTitle;
+    @Value("${csv.file.ktgg-title}")
+    private String ktggTitle;
+    @Value("${csv.file.zxgg-title}")
+    private String zxggTitle;
+    @Value("${csv.file.shixin-title}")
+    private String shixinTitle;
+    @Value("${csv.file.fygg-title}")
+    private String fyggTitle;
+    @Value("${csv.file.ajlc-title}")
+    private String ajlcTitle;
+    @Value("${csv.file.bgt-title}")
+    private String bgtTitle;
+    @Value("${csv.file.sifacdk-title}")
+    private String sifacdkTitle;
 
 
-    @Value("${csv.file.company-case-title}")
-    private String companyCaseTitle;
-    @Value("${csv.file.litigation-related-title}")
-    private String litigationRelatedTitle;
-    @Value("${csv.file.revenue-related-title}")
-    private String revenueRelatedTitle;
-    @Value("${csv.file.env-protection-title}")
-    private String envProtectionTitle;
-
-
-    /**
-     * 写入环保数据
-     * @param values
-     */
-    @Async
-    public void  writeEnvProtectionCSVFile(List<String[]> values){
-        writeCSVFile(envProtectionPath,envProtectionTitle,values);
+    public void  writeEpbparty(String[] values){
+        writeCSVFile(epbpartyPath,epbpartyTitle,values);
     }
-
-
-    /**
-     * 写入涉税数据
-     * @param values
-     */
-    @Async
-    public void  writeRevenueRelatedCSVFile(List<String[]> values){
-        writeCSVFile(revenueRelatedPath,revenueRelatedTitle,values);
+    public void  writeEpbpartyJkqy(String[] values){
+        writeCSVFile(epbpartyJkqyPath,epbpartyJkqyTitle,values);
     }
-
-    /**
-     * 写入涉诉数据
-     * @param values
-     */
-    @Async
-    public void  writeLitigationRelatedCSVFile(List<String[]> values){
-        writeCSVFile(litigationRelatedPath,litigationRelatedTitle,values);
+    public void  writeEpbpartyZxjc(String[] values){
+        writeCSVFile(epbpartyZxjcPath,epbpartyZxjcTitle,values);
     }
-
-
-    /**
-     * 写入公司涉案数据
-     */
-    @Async
-    public void  writeCompanyCaseCSVFile(List<String[]> values){
-        writeCSVFile(companyCasePath,companyCaseTitle,values);
+    public void  writeSatpartyQs(String[] values){
+        writeCSVFile(satpartyQsPath,satpartyQsTitle,values);
     }
-
-
+    public void  writeSatpartyChufa(String[] values){
+        writeCSVFile(satpartyChufaPath,satpartyChufaTitle,values);
+    }
+    public void  writeSatpartyXin(String[] values){
+        writeCSVFile(satpartyXinPath,satpartyXinTitle,values);
+    }
+    public void  writeSatpartyReg(String[] values){
+        writeCSVFile(satpartyRegPath,satpartyRegTitle,values);
+    }
+    public void  writeSatpartyXuke(String[] values){
+        writeCSVFile(satpartyXukePath,satpartyXukeTitle,values);
+    }
+    public void  writeCpws(String[] values){
+        writeCSVFile(cpwsPath,cpwsTitle,values);
+    }
+    public void  writeKtgg(String[] values){
+        writeCSVFile(ktggPath,ktggTitle,values);
+    }
+    public void  writeZxgg(String[] values){
+        writeCSVFile(zxggPath,zxggTitle,values);
+    }
+    public void  writeShixin(String[] values){
+        writeCSVFile(shixinPath,shixinTitle,values);
+    }
+    public void  writeFygg(String[] values){
+        writeCSVFile(fyggPath,fyggTitle,values);
+    }
+    public void  writeAjlc(String[] values){
+        writeCSVFile(ajlcPath,ajlcTitle,values);
+    }
+    public void  writeBgt(String[] values){
+        writeCSVFile(bgtPath,bgtTitle,values);
+    }
+    public void  writeSifacdk(String[] values){
+        writeCSVFile(sifacdkPath,sifacdkTitle,values);
+    }
     /**
      * 负责写入文件
      * @param path
      * @param title
      * @param values
      */
-    public void writeCSVFile(String path,String title,List<String[]> values){
+    public void writeCSVFile(String path,String title,String[] values){
 
         CsvWriter cw = null;
         String[] header = title.split(",");
@@ -98,9 +155,7 @@ public class CSVMapper {
             //追加文件内容
             BufferedWriter out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(path, true), "GBK"), 1024);
             cw = new CsvWriter(out, ',');
-            for (String[] value : values) {
-                cw.writeRecord(value);
-            }
+                cw.writeRecord(values);
         } catch (IOException e) {
             log.error("找不到CVS文件",e);
         } finally {
