@@ -23,6 +23,7 @@ public class Shixin {
     private String    yiwu;//义务  生效法律文书确定的义务
     private String    yjCode;//依据文号  执行依据文号
     private String    dataType;//数据类型
+    private String   matchRatio;//个人匹配度
     private String    eventLevel;//五级分类  警告：-2，负向：-1，中性：0，正向：1，利好：2
     private String    lxqk;//履行情况  失信被执行人履行情况；全部未履行/部分未履行/全部已履行等文字描述
     private String    caseNoKword;//代字  执等

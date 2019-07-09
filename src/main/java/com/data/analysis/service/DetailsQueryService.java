@@ -17,5 +17,10 @@ public interface DetailsQueryService {
 
     public  void writeFile(String dataType,JSONArray results);
 
+    /**
+     * 获取页数
+     * @return
+     */
+ //   int getTotalPage();
 
 }

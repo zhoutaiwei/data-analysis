@@ -25,5 +25,5 @@ public class Satparty_chufa {
     // 五级分类  警告：-2，负向：-1，中性：0，正向：1，利好：2  15  eventName  事件名称  1，罚款；2，没收非法所得；3，
     // 限期整改；4，违反税管法；5，其他；6；基本类型组合
     private String     eventLevel;
-
+    private String eventName; //事件名称  ,1，罚款；2，没收非法所得；3，限期整改；4，违反税管法；5，其他；6；基本类型组合
 }

@@ -36,6 +36,8 @@ public class Cpws {
     private String dataType;
     //当事人,参照当事人数据字典
     private JSONArray partys;
+
+    private String   matchRatio;//个人匹配度
     //法院等级
     private String courtRank;
     //五级分类,警告：-2，负向：-1，中性：0，正向：1，利好：2

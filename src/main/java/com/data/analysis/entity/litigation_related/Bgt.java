@@ -21,6 +21,7 @@ public class Bgt {
     private String   sortTime; //立案时间
     private String   yiju; //依据
     private String   dataType; //数据类型
+    private String   matchRatio;//个人匹配度
     private String   eventLevel; //五级分类  警告：-2，负向：-1，中性：0，正向：1，利好：2
     private String   execMoney; //标的金额
     private String   caseNoKword; //代字  执

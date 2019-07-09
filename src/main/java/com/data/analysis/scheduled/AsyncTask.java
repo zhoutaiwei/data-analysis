@@ -24,7 +24,11 @@ public class AsyncTask {
     @Async("taskExecutor")
     public void  doTask(int pageNo)  {
         long start = System.currentTimeMillis();
-        dataHandleService.handleTask(pageNo);
+        try {
+            dataHandleService.handleTask(pageNo);
+        } catch (Exception e) {
+            log.error("任务执行出错", e);
+        }
 
         long end = System.currentTimeMillis();
         log.info("当前线程号："+Thread.currentThread().getId()+"--耗时:" + (end - start) + "毫秒");

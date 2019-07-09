@@ -5,8 +5,11 @@ import com.alibaba.fastjson.JSONObject;
 import com.data.analysis.constant.DataTypeConstant;
 import com.data.analysis.service.CompanyQueryService;
 import com.data.analysis.utils.HttpClientUtils;
+import com.data.analysis.utils.LogUtils;
 import com.data.analysis.utils.SignUtil;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
@@ -18,14 +21,13 @@ import static java.lang.Integer.getInteger;
 @Service
 public class CompanyQueryServiceImpl implements CompanyQueryService {
 
+    @Autowired
+    HttpClientUtils httpClientUtils;
+
     /**
      * baseURI
      */
     private final String baseUrl = "http://monitor.fahaicc.com/request";
-
-
-
-
 
     @Override
     public JSONObject getStandardDataByPageNo(final int pageNo) {
@@ -37,8 +39,6 @@ public class CompanyQueryServiceImpl implements CompanyQueryService {
         paramMap.put("api","result");
         paramMap.put("uid",DataTypeConstant.uid);
         JSONObject json = new JSONObject();
-       //json.put("resultDataType", "cpws");
-      //  json.put("pname", "万科企业股份有限公司");
         json.put("pageno", pageNo);
         json.put("customerGroupId", 4096);
         json.put("range", 20);
@@ -57,7 +57,7 @@ public class CompanyQueryServiceImpl implements CompanyQueryService {
             log.info("获取数据失败！");
             return 0;
         }
-        return result.getInteger("totalPageNum");
+        return result.getInteger("totalPage");
     }
 
 
@@ -67,15 +67,22 @@ public class CompanyQueryServiceImpl implements CompanyQueryService {
         //构建请求url
         String url = uri;
         //发送get 请求获取数据
-        String resultStr = HttpClientUtils.doGet(url, param);
-        JSONObject result = JSONObject.parseObject(resultStr);
-        String code = result.getString("code");
+        String resultStr = null;
+        JSONObject result = null;
+        String code = null;
+        try {
+            resultStr = httpClientUtils.doGet(url, param);
+            result = JSONObject.parseObject(resultStr);
+            code = result.getString("code");
+        } catch (Exception e) {
+            log.error("解析数据失败，返回格式不正确",e);
+        }
         //判断是否返回成功
         if (!DataTypeConstant.SUCCESS_CODE.equals(code)) {
-            log.info("请求不成功,返回結果：{}",resultStr);
+            log.info("请求不成功,返回結果不正确");
             return null;
         }
-        log.info("请求成功,返回結果：{}",resultStr);
+      //  log.info("请求成功,返回結果：{}",resultStr);
         return result;
     }
 

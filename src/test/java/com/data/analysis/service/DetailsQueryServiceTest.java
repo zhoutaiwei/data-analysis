@@ -17,7 +17,7 @@ public class DetailsQueryServiceTest {
 
     @Test
     public void getEPDetailsQueryData() {
-       service.getEPDetailsQueryData("tl_5fa332f1b106ec4bb2117c0cb67ecc1e","ktgg");
+       service.getEPDetailsQueryData("c2019310106minchu7802_t20190722","ktgg");
 
     }
 

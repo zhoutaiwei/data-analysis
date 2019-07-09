@@ -19,13 +19,15 @@ public class TimeScheduled {
     @Autowired
     CompanyQueryServiceImpl dataService;
 
-    private static final SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
     @Autowired
     AsyncTask asyncTask;
-
-
-    // 定义每过10秒执行处理公司案件数据任务
- //   @Scheduled(fixedRate = 100000)
+    public static Long currentTime;
+    static {
+        currentTime = System.currentTimeMillis();
+    }
+    // 定义每过10秒执行任务
+   @Scheduled(fixedRate = 100000000)
+   //@Scheduled(cron = "0 0 1 */1 * ?")
     public void ExecuteCompanyCaseTask() throws Exception {
         log.info("开始执行处理任务...");
         long start = System.currentTimeMillis();

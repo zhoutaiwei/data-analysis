@@ -18,8 +18,9 @@ public class Ajlc {
     private String   pname; //当事人名称  企业名称/姓名
     private String   sortTime; //案件时间  立案、 结案、 归档、 审理
     private String   dataType; //数据类型
-    private String    ajlcStatusS; //审理状态  结案/归档/审理/报结/排期/立案受理/中止审理
-    private String    eventLevel; //五级分类  警告：-2，负向：-1，中性：0，正向：1，利好：2
-    private String    caseNoKword; //代字  民初、民终等
-    private String    courtTypeS; //法院类型  全国四级法院/海事法院/军事法院等
+    private String   ajlcStatusS; //审理状态  结案/归档/审理/报结/排期/立案受理/中止审理
+    private String   matchRatio;//个人匹配度
+    private String   eventLevel; //五级分类  警告：-2，负向：-1，中性：0，正向：1，利好：2
+    private String   caseNoKword; //代字  民初、民终等
+    private String   courtTypeS; //法院类型  全国四级法院/海事法院/军事法院等
 }

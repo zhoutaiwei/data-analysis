@@ -18,9 +18,22 @@ import java.util.Date;
 public class Object2ArrayUtils {
 
     /**
+     * 将PartyDictionary对象中的值转为数组，与CVS文件的title顺序一致
+     */
+    public static String[] partyDictionaryObject2Array(PartyDictionary entity){
+        String cpwsId = entity.getCpwsId();
+        String partyType = entity.getPartyType();
+        String pname = entity.getPname();
+        String birthday = entity.getBirthday();
+        String partyPosition = entity.getPartyPosition();
+        String partyTitle = entity.getTitle();
+        return new String[]{cpwsId,partyType,pname,birthday,partyPosition,partyTitle};
+    }
+
+    /**
      * 将Satparty_xuke对象中的值转为数组，与CVS文件的title顺序一致
      */
-    public String[] satparty_xukeObject2Array(Satparty_xuke entity){
+    public static String[] satparty_xukeObject2Array(Satparty_xuke entity){
         String satparty_xukeId = entity.getSatparty_xukeId();
         String authority = entity.getAuthority();
         String body = entity.getBody();
@@ -40,7 +53,7 @@ public class Object2ArrayUtils {
     /**
      * 将Satparty_xin对象中的值转为数组，与CVS文件的title顺序一致
      */
-    public String[] satparty_xinObject2Array(Satparty_xin entity){
+    public static String[] satparty_xinObject2Array(Satparty_xin entity){
         String satparty_xinId = entity.getSatparty_xinId();
         String authority = entity.getAuthority();
         String body = entity.getBody();
@@ -60,7 +73,7 @@ public class Object2ArrayUtils {
     /**
      * 将satparty_reg对象中的值转为数组，与CVS文件的title顺序一致
      */
-    public String[] satparty_regObject2Array(Satparty_reg entity){
+    public static String[] satparty_regObject2Array(Satparty_reg entity){
         String satparty_regId = entity.getSatparty_regId();
         String authority = entity.getAuthority();
         String body = entity.getBody();
@@ -82,7 +95,7 @@ public class Object2ArrayUtils {
     /**
      * 将satparty_qs对象中的值转为数组，与CVS文件的title顺序一致
      */
-    public String[] satparty_qsObject2Array(Satparty_qs entity){
+    public static String[] satparty_qsObject2Array(Satparty_qs entity){
         String satparty_qsId = entity.getSatparty_qsId();
         String authority = entity.getAuthority();
         String body = entity.getBody();
@@ -105,7 +118,7 @@ public class Object2ArrayUtils {
     /**
      * 将 satparty_fzc对象中的值转为数组，与CVS文件的title顺序一致
      */
-    public String[] satparty_fzcObject2Array(Satparty_fzc entity){
+    public static String[] satparty_fzcObject2Array(Satparty_fzc entity){
         String satparty_fzcId = entity.getSatparty_fzcId();
         String authority = entity.getAuthority();
         String body = entity.getBody();
@@ -126,7 +139,7 @@ public class Object2ArrayUtils {
     /**
      * 将satparty_chufa对象中的值转为数组，与CVS文件的title顺序一致
      */
-    public String[] satparty_chufaObject2Array(Satparty_chufa entity){
+    public static String[] satparty_chufaObject2Array(Satparty_chufa entity){
         String satparty_chufaId = entity.getSatparty_chufaId();
         String authority = entity.getAuthority();
         String body = entity.getBody();
@@ -147,7 +160,7 @@ public class Object2ArrayUtils {
     /**
      * 将zxgg对象中的值转为数组，与CVS文件的title顺序一致
      */
-    public String[] zxggObject2Array(Zxgg entity){
+    public static String[] zxggObject2Array(Zxgg entity){
         String zxggId = entity.getZxggId();
         String address = entity.getAddress();
         String body = entity.getBody();
@@ -171,7 +184,7 @@ public class Object2ArrayUtils {
     /**
      * 将sifacdk对象中的值转为数组，与CVS文件的title顺序一致
      */
-    public String[] sifacdkObject2Array(Sifacdk entity){
+    public static String[] sifacdkObject2Array(Sifacdk entity){
         String sifacdkId = entity.getSifacdkId();
         String body = entity.getBody();
         String sortTime = entity.getSortTime();
@@ -193,7 +206,7 @@ public class Object2ArrayUtils {
     /**
      * 将shixin对象中的值转为数组，与CVS文件的title顺序一致
      */
-    public String[] shixinObject2Array(Shixin entity){
+    public static String[] shixinObject2Array(Shixin entity){
         String shixinId = entity.getShixinId();
         String age = entity.getAge();
         String caseNo = entity.getCaseNo();
@@ -218,7 +231,7 @@ public class Object2ArrayUtils {
     /**
      * 将ktgg对象中的值转为数组，与CVS文件的title顺序一致
      */
-    public String[] ktggObject2Array(Ktgg entity){
+    public static String[] ktggObject2Array(Ktgg entity){
         String ktggId = entity.getKtggId();
         String body = entity.getBody();
         String caseCause = entity.getCaseCause();
@@ -240,7 +253,7 @@ public class Object2ArrayUtils {
     /**
      * 将fygg对象中的值转为数组，与CVS文件的title顺序一致
      */
-    public String[] fyggObject2Array(Fygg entity){
+    public static String[] fyggObject2Array(Fygg entity){
         String fyggId = entity.getFyggId();
         String body = entity.getBody();
         String court = entity.getCourt();
@@ -260,7 +273,7 @@ public class Object2ArrayUtils {
     /**
      * 将cpws对象中的值转为数组，与CVS文件的title顺序一致
      */
-    public String[] cpwsObject2Array(Cpws entity){
+    public static String[] cpwsObject2Array(Cpws entity){
         String bgtId = entity.getCpwsId();
         String body = entity.getBody();
         String caseCause = entity.getCaseCause();
@@ -280,13 +293,13 @@ public class Object2ArrayUtils {
         String caseNoKword = entity.getCaseNoKword();
         String caseTypeS = entity.getCaseTypeS();
         return new String[]{bgtId,body,caseCause,caseNo,court,idcardNo,pname,sortTime,title,trialProcedure,yiju,dataType,
-                partys.toJSONString(),courtRank,eventLevel,courtTypeS,caseNoKword,caseTypeS};
+                partys+"",courtRank,eventLevel,courtTypeS,caseNoKword,caseTypeS};
     }
 
     /**
      * 将bgt对象中的值转为数组，与CVS文件的title顺序一致
      */
-    public String[] bgtObject2Array(Bgt entity){
+    public static String[] bgtObject2Array(Bgt entity){
         String bgtId = entity.getBgtId();
         String address = entity.getAddress();
         String body = entity.getBody();
@@ -312,7 +325,7 @@ public class Object2ArrayUtils {
     /**
      * 将ajlc对象中的值转为数组，与CVS文件的title顺序一致
      */
-    public String[] ajlcObject2Array(Ajlc entity){
+    public static String[] ajlcObject2Array(Ajlc entity){
         String ajlcId = entity.getAjlcId();
         String body = entity.getBody();
         String caseCause = entity.getCaseCause();
@@ -334,7 +347,7 @@ public class Object2ArrayUtils {
     /**
      * 将epbparty_zxjc对象中的值转为数组，与CVS文件的title顺序一致
      */
-    public String[] epbparty_zxjcObject2Array(Epbparty_zxjc entity){
+    public static String[] epbparty_zxjcObject2Array(Epbparty_zxjc entity){
         String epbparty_zxjcId = entity.getEpbparty_zxjcId();
         String creditNo = entity.getCreditNo();
         String dealWay = entity.getDealWay();
@@ -356,7 +369,7 @@ public class Object2ArrayUtils {
     /**
      * 将Epbparty_jkqy对象中的值转为数组，与CVS文件的title顺序一致
      */
-    public String[] epbparty_jkqyObject2Array(Epbparty_jkqy entity){
+    public static String[] epbparty_jkqyObject2Array(Epbparty_jkqy entity){
         String eventName = entity.getEventName();
         String eventType = entity.getEventType();
         String dataType = entity.getDataType();
@@ -368,7 +381,7 @@ public class Object2ArrayUtils {
     /**
      * 将Epbparty对象中的值转为数组，与CVS文件的title顺序一致
      */
-    public String[] epbpartyObject2Array(Epbparty entity){
+    public static String[] epbpartyObject2Array(Epbparty entity){
 
         String authority = entity.getAuthority();
         String body = entity.getBody();
@@ -386,7 +399,7 @@ public class Object2ArrayUtils {
         Long sortTime = entity.getSortTime();
         String title = entity.getTitle();
         return new String[]{authority,body,caseNo,dataType,epbpartyId,eventLevel,eventName,eventResult,eventYiju,
-                legalRepresentative,money,pname,postTime.toString(),sortTime.toString(),title};
+                legalRepresentative,money,pname,postTime+"",sortTime+"",title};
     }
 
 

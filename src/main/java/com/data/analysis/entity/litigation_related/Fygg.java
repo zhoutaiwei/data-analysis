@@ -17,6 +17,7 @@ public class Fygg {
     private String   sortTime; //立案时间
     private String   title; //标题
     private String   dataType; //数据类型
+    private String   matchRatio;//个人匹配度
     private String   ggType; //公告类型
     private String    eventLevel; //五级分类  警告：-2，负向：-1，中性：0，正向：1，利好：2
     private String    caseNo; //案号

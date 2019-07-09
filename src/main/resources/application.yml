@@ -13,49 +13,42 @@ server:
   port: 8580
 csv:
   file:
-    epbparty-path: C:\Users\HP\Desktop\epbparty.csv
+    epbparty-path: C:\Users\希希\Desktop\fahai\data\#month\#day\#type\epbparty.csv
     epbparty-title: authority,body,caseNo,dataType,epbpartyId,eventLevel,eventName,eventResult,eventYiju,legalRepresentative,money,pname,postTime,sortTime,title
-    epbparty-jkqy-path: C:\Users\HP\Desktop\epbparty-jkqy.csv
+    epbparty-jkqy-path: C:\Users\希希\Desktop\fahai\data\#month\#day\#type\epbparty-jkqy.csv
     epbparty-jkqy-title: eventName,eventType,dataType,epbparty_jkqyId,pname
-    epbparty-zxjc-path: C:\Users\HP\Desktop\epbparty-zxjc.csv
+    epbparty-zxjc-path: C:\Users\希希\Desktop\fahai\data\#month\#day\#type\epbparty-zxjc.csv
     epbparty-zxjc-title: epbparty_zxjcId,creditNo,dealWay,dealWhere,density,eventResult,monitorWay,pname,pollutant,sortTime,standard,station,dataType
-    satparty-qs-path: C:\Users\HP\Desktop\satparty-qs.csv
-    satparty-qs-title:
-    satparty-chufa-path: C:\Users\HP\Desktop\satparty-chufa.csv
-    satparty-chufa-title:
-    satparty-xin-path: C:\Users\HP\Desktop\satparty-xin.csv
-    satparty-xin-title:
-    satparty-reg-path: C:\Users\HP\Desktop\satparty-reg.csv
-    satparty-reg-title:
-    satparty-xuke-path: C:\Users\HP\Desktop\satparty-xuke.csv
-    satparty-xuke-title:
-    cpws-path: C:\Users\HP\Desktop\cpws.csv
-    cpws-title:
-    ktgg-path: C:\Users\HP\Desktop\ktgg.csv
-    ktgg-title:
-    zxgg-path: C:\Users\HP\Desktop\zxgg.csv
-    zxgg-title:
-    shixin-path: C:\Users\HP\Desktop\shixin.csv
-    shixin-title:
-    fygg-path: C:\Users\HP\Desktop\fygg.csv
-    fygg-title:
-    ajlc-path: C:\Users\HP\Desktop\ajlc.csv
-    ajlc-title:
-    bgt-path: C:\Users\HP\Desktop\bgt.csv
-    bgt-title:
-    sifacdk-path: C:\Users\HP\Desktop\sifacdk.csv
-    sifacdk-title:
+    satparty-qs-path: C:\Users\希希\Desktop\fahai\data\#month\#day\#type\satparty-qs.csv
+    satparty-qs-title: satparty_qsId,authority,body,eventName,legalRepresentative,lrIdcard,money,pname,postTime,sortTime,taxCategory,taxpayerId,title,dataType,authorityRank
+    satparty-chufa-path: C:\Users\希希\Desktop\fahai\data\#month\#day\#type\satparty-chufa.csv
+    satparty-chufa-title: satparty_chufaId,authority,body,eventResult,legalRepresentative,lrIdcard,money,pname,postTime,sortTime,taxpayerId,title,dataType,eventLevel
+    satparty-xin-path: C:\Users\希希\Desktop\fahai\data\#month\#day\#type\satparty-xin.csv
+    satparty-xin-title: satparty_xinId,authority,body,eventResult,legalRepresentative,pname,postTime,sortTime,taxpayerId,title,dataType,authorityRank
+    satparty-reg-path: C:\Users\希希\Desktop\fahai\data\#month\#day\#type\satparty-reg.csv
+    satparty-reg-title: satparty_regId,authority,body,eventName,eventResult,legalRepresentative,lrIdcard,pname,postTime,sortTime ,taxpayerId,title,dataType,authorityRank
+    satparty-xuke-path: C:\Users\希希\Desktop\fahai\data\#month\#day\#type\satparty-xuke.csv
+    satparty-xuke-title: satparty_xukeId,authority,body,eventResult,legalRepresentative,pname,postTime,sortTime ,taxpayerId,title,dataType,authorityRank
+    satparty-fzc-path: C:\Users\希希\Desktop\fahai\data\#month\#day\#type\satparty-fzc.csv
+    satparty-fzc-title: satparty_fzcId,authority,body,eventName,eventResult,legalRepresentative,lrIdcard,pname,postTime,sortTime,taxpayerId,title,dataType,eventLevel
+    cpws-path: C:\Users\希希\Desktop\fahai\data\#month\#day\#type\cpws.csv
+    cpws-title: bgtId,body,caseCause,caseNo,court,idcardNo,pname,sortTime,title,trialProcedure,yiju,dataType,partys,courtRank,eventLevel,courtTypeS,caseNoKword,caseTypeS
+    partys-dictionary-path: C:\Users\希希\Desktop\fahai\data\#month\#day\#type\partys-dictionary.csv
+    partys-dictionary-title: cpwsId,partyType,pname,birthday,partyPosition,partyTitle
+    ktgg-path: C:\Users\希希\Desktop\fahai\data\#month\#day\#type\ktgg.csv
+    ktgg-title: ktggId,body,caseCause,caseNo,court,defendant,plaintiff,pname,sortTime,title,dataType,eventLevel,caseNoKword,courtTypeS
+    zxgg-path: C:\Users\希希\Desktop\fahai\data\#month\#day\#type\zxgg.csv
+    zxgg-title: zxggId,address,body,caseNo,closeDate,court,execMoney,idcardNo,pname,proposer,sortTime,title,dataType,eventLevel,caseNoKword,courtTypeS
+    shixin-path: C:\Users\希希\Desktop\fahai\data\#month\#day\#type\shixin.csv
+    shixin-title: shixinId,age,caseNo,court,jtqx,pname,idcardNo,postTime,province,sortTime,yiwu,yjCode,dataType,eventLevel,lxqk,caseNoKword,courtTypeS
+    fygg-path: C:\Users\希希\Desktop\fahai\data\#month\#day\#type\fygg.csv
+    fygg-title: fyggId,body,court,layout,pname,sortTime,title,dataType,ggType,eventLevel,caseNo,caseNoKword
+    ajlc-path: C:\Users\希希\Desktop\fahai\data\#month\#day\#type\ajlc.csv
+    ajlc-title: ajlcId,body,caseCause,caseNo,court,organizer,pname,sortTime,dataType,ajlcStatusS,eventLevel,caseNoKword,courtTypeS
+    bgt-path: C:\Users\希希\Desktop\fahai\data\#month\#day\#type\bgt.csv
+    bgt-title: bgtId,address,body,caseCause,caseNo,court,idcardNo,pname,proposer,sortTime,yiju,dataType,eventLevel,execMoney,caseNoKword,courtTypeS
+    sifacdk-path: C:\Users\希希\Desktop\fahai\data\#month\#day\#type\sifacdk.csv
+    sifacdk-title: sifacdkId,body,sortTime,eventDate,objectName,court,pname,title,action,caseNo,objectType,postTime,money,eventLevel,dataType
 
-
-
-    company-case-path: C:\Users\HP\Desktop\company-case.csv
-    company-case-title: anyou,case_noo,court,result_amount,result_data_type,result_entry_id,result_level,result_name,result_summary,result_ymd
-    litigation-related-path: C:\Users\HP\Desktop\litigation-related.csv
-    litigation-related-title: body,data_type,entry_id,sort_time,sort_time_string,title
-
-    revenue-related-path: C:\Users\HP\Desktop\revenue-related01.csv
-    revenue-related-title: body,data_type,entry_id,sort_time,sort_time_string,title
-
-    env-protection-path: C:\Users\HP\Desktop\env-protection.csv
-    env-protection-title: body,data_type,entry_id,sort_time,sort_time_string,title
+    log-path: C:\Users\希希\Desktop\fahai\log\#month\#log.csv
 

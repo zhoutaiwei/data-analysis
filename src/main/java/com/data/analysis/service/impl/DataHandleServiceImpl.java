@@ -59,27 +59,9 @@ public class DataHandleServiceImpl implements DataHandleService {
             }
 
 
-            log.info("第{}页数据写入csv文件结束，写入数据库结束",pageNo);
+            log.info("第{}页数据写入csv文件结束",pageNo);
         }else {
             log.info("第{}页数据获取失败",pageNo);
         }
     }
-
-  /*  *//**
-     * 对返回数据进行处理
-     * @param jsonArray
-     * @param csvEntitys
-     * @param dbEntitys
-     *//*
-    public void dataHandle( JSONArray jsonArray,List<String []> csvEntitys,List<LitigationRelatedEntity> dbEntitys){
-        for (int i=0;i<jsonArray.size();i++){
-            JSONObject jsonObject = jsonArray.getJSONObject(i);
-            //将json转为对象，
-            LitigationRelatedEntity entity = JSONObject.toJavaObject(jsonObject, LitigationRelatedEntity.class);
-            //将数组添加到集合中，用于写入csv文件
-            csvEntitys.add(object2ArrayUtils.LItigationRelatedObject2Array(entity));
-
-            dbEntitys.add(entity);
-        }
-    }*/
 }

@@ -26,5 +26,6 @@ public class Satparty_qs {
     // 税务局等级  1：国税总局 2：省级（国税、地税） 3：地市级（国税、地税） 4：区县级（国税、地税）
     // 5：基层税务分局（所）（国税、地税） 6：其他   16  eventLevel  五级分类  警告：-2，负向：-1，中性：0，正向：1，利好：2
     private String     authorityRank;
+    private String     eventLevel; // 五级分类  警告：-2，负向：-1，中性：0，正向：1，利好：2
 
 }

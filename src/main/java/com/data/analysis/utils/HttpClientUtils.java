@@ -1,6 +1,7 @@
 package com.data.analysis.utils;
 
 import com.alibaba.fastjson.JSONObject;
+import com.data.analysis.constant.DataTypeConstant;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpStatus;
@@ -11,24 +12,36 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.utils.URIBuilder;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.impl.client.DefaultHttpRequestRetryHandler;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URLDecoder;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Map;
+import java.util.zip.ZipFile;
 
 /**
  * HttpClient4.3工具类
  * @author
  */
 @Slf4j
+@Component
 public class HttpClientUtils
 {
+
+    @Autowired
+    LogUtils logUtils;
+
     private static Logger logger = LoggerFactory.getLogger(HttpClientUtils.class); // 日志记录
 
     private static RequestConfig requestConfig = null;
@@ -36,15 +49,26 @@ public class HttpClientUtils
     static
     {
         // 设置请求和传输超时时间
-        requestConfig = RequestConfig.custom().setSocketTimeout(10000).setConnectTimeout(10000).build();
+        requestConfig = RequestConfig.custom().setSocketTimeout(20000).setConnectTimeout(20000).build();
     }
 
-    public static String doGet(String url, Map<String, String> param) {
+    public  String doGet(String url, Map<String, String> param) {
 
         // 创建Httpclient对象
-        CloseableHttpClient httpclient = HttpClients.createDefault();
+        DefaultHttpClient httpClient = new DefaultHttpClient();
         String resultString = "";
         CloseableHttpResponse response = null;
+        //请求url
+        String requestUrl="";
+        //请求状态
+        int status =0;
+        //请求耗时
+        Long  timeConsuming=0L;
+        //错误消息
+        String errorMessage = "";
+        //请求时间
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String requestDate="";
         try {
             // 创建uri
             URIBuilder builder = new URIBuilder(url);
@@ -54,28 +78,52 @@ public class HttpClientUtils
                 }
             }
             URI uri = builder.build();
-           // log.info("请求路径：{}",URLDecoder.decode(uri.toASCIIString(), "UTF-8"));
+        //   log.info("请求路径：{}",URLDecoder.decode(uri.toASCIIString(), "UTF-8"));
+            requestUrl = URLDecoder.decode(uri.toASCIIString(), "UTF-8");
+            long startTime = System.currentTimeMillis();
+            requestDate = format.format(new Date());
             // 创建http GET请求
             HttpGet httpGet = new HttpGet(uri);
             httpGet.setConfig(requestConfig);
+            //指定重试次数
+            httpClient.setHttpRequestRetryHandler(new DefaultHttpRequestRetryHandler(3,true));
             // 执行请求
-            response = httpclient.execute(httpGet);
+            response = httpClient.execute(httpGet);
+            long endTime = System.currentTimeMillis();
+            //请求耗时
+            timeConsuming = endTime-startTime;
+            //相应状态
+            status = response.getStatusLine().getStatusCode();
             // 判断返回状态是否为200
             if (response.getStatusLine().getStatusCode() == 200) {
                 resultString = EntityUtils.toString(response.getEntity(), "UTF-8");
+                try {
+                    JSONObject jsonObject = JSONObject.parseObject(resultString);
+                    String code = jsonObject.getString("code");
+                    //如果失败则记录错误信息
+                    if(!DataTypeConstant.SUCCESS_CODE.equals(code)){
+                        errorMessage=resultString;
+                    }
+                } catch (Exception e) {
+                    log.error("json解析错误",e);
+                }
             }
         } catch (Exception e) {
+            //500代表请求失败
+            status=500;
+            errorMessage = e.getMessage();
             log.error("請求異常：{}",e);
         } finally {
             try {
                 if (response != null) {
                     response.close();
                 }
-                httpclient.close();
+                httpClient.close();
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
+        logUtils.writeLog(requestUrl,status,timeConsuming,errorMessage,requestDate);
         return resultString;
     }
 
