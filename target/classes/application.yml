@@ -1,20 +1,13 @@
-
-
 spring:
+  profiles:
+    active: local
   datasource:
-#    url: jdbc:postgresql://192.168.1.1:5432/postgre
-    url: jdbc:mysql://hadoop102:3306/company_case
+    url: jdbc:postgresql://192.168.1.1:5432/postgre
+ #   url: jdbc:mysql://hadoop102:3306/company_case?useUnicode=true&characterEncoding=UTF-8
     username: root
     password: root
-#    driver-class-name: org.postgresql.Driver
-    driver-class-name: com.mysql.jdbc.Driver
+    driver-class-name: org.postgresql.Driver
+  #  driver-class-name: com.mysql.jdbc.Driver
 
 server:
   port: 8580
-csv:
-  file:
-    company-case-path: C:\Users\HP\Desktop\company-case.csv
-    company-case-title: anyou,case_noo,court,result_amount,result_data_type,result_entry_id,result_level,result_name,result_summary,result_ymd
-    litigation-related-path: C:\Users\HP\Desktop\litigation-related.csv
-    litigation-related-title: body,data_type,entry_id,sort_time,sort_time_string,title
-

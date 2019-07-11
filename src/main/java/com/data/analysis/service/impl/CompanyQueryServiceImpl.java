@@ -70,12 +70,12 @@ public class CompanyQueryServiceImpl implements CompanyQueryService {
         String resultStr = null;
         JSONObject result = null;
         String code = null;
+        resultStr = httpClientUtils.doGet(url, param);
         try {
-            resultStr = httpClientUtils.doGet(url, param);
             result = JSONObject.parseObject(resultStr);
             code = result.getString("code");
         } catch (Exception e) {
-            log.error("解析数据失败，返回格式不正确",e);
+            log.error("返回结果为：{},解析数据失败，返回格式不正确{}",resultStr,e);
         }
         //判断是否返回成功
         if (!DataTypeConstant.SUCCESS_CODE.equals(code)) {

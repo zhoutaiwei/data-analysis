@@ -37,7 +37,7 @@ public class Object2ArrayUtils {
         String satparty_xukeId = entity.getSatparty_xukeId();
         String authority = entity.getAuthority();
         String body = entity.getBody();
-        String eventResult = entity.getEventName();
+        String eventName = entity.getEventName();
         String legalRepresentative = entity.getLegalRepresentative();
         String pname = entity.getPname();
         String postTime = entity.getPostTime();
@@ -45,9 +45,8 @@ public class Object2ArrayUtils {
         String taxpayerId = entity.getTaxpayerId();
         String title = entity.getTitle();
         String dataType = entity.getDataType();
-        String authorityRank = entity.getEventLevel();
-        return new String[]{satparty_xukeId,authority,body,eventResult,legalRepresentative,pname,postTime,sortTime
-                ,taxpayerId,title,dataType,authorityRank};
+        String eventLevel = entity.getEventLevel();
+        return new String[]{satparty_xukeId,authority,body,eventName,legalRepresentative,pname,postTime,sortTime,taxpayerId,title,dataType,eventLevel};
     }
 
     /**
@@ -65,9 +64,8 @@ public class Object2ArrayUtils {
         String taxpayerId = entity.getTaxpayerId();
         String title = entity.getTitle();
         String dataType = entity.getDataType();
-        String authorityRank = entity.getEventLevel();
-        return new String[]{satparty_xinId,authority,body,eventResult,legalRepresentative,pname,postTime,sortTime
-                ,taxpayerId,title,dataType,authorityRank};
+        String eventLevel = entity.getEventLevel();
+        return new String[]{satparty_xinId,authority,body,eventResult,legalRepresentative,pname,postTime,sortTime,taxpayerId,title,dataType,eventLevel};
     }
 
     /**
@@ -87,9 +85,8 @@ public class Object2ArrayUtils {
         String taxpayerId = entity.getTaxpayerId();
         String title = entity.getTitle();
         String dataType = entity.getDataType();
-        String authorityRank = entity.getEventLevel();
-        return new String[]{satparty_regId,authority,body,eventName,eventResult,legalRepresentative,lrIdcard,pname,postTime,sortTime
-                ,taxpayerId,title,dataType,authorityRank};
+        String eventLevel = entity.getEventLevel();
+        return new String[]{satparty_regId,authority,body,eventName,eventResult,legalRepresentative,lrIdcard,pname,postTime,sortTime,taxpayerId,title,dataType,eventLevel};
     }
 
     /**
@@ -111,8 +108,8 @@ public class Object2ArrayUtils {
         String title = entity.getTitle();
         String dataType = entity.getDataType();
         String authorityRank = entity.getAuthorityRank();
-        return new String[]{satparty_qsId,authority,body,eventName,legalRepresentative,lrIdcard,money,pname,postTime,sortTime,taxCategory
-                ,taxpayerId,title,dataType,authorityRank};
+        String eventLevel = entity.getEventLevel();
+        return new String[]{satparty_qsId,authority,body,eventName,legalRepresentative,lrIdcard,money,pname,postTime,sortTime,taxCategory,taxpayerId,title,dataType,authorityRank,eventLevel};
     }
 
     /**
@@ -133,8 +130,7 @@ public class Object2ArrayUtils {
         String title = entity.getTitle();
         String dataType = entity.getDataType();
         String eventLevel = entity.getEventLevel();
-        return new String[]{satparty_fzcId,authority,body,eventName,eventResult,legalRepresentative,lrIdcard,pname,postTime,sortTime
-                ,taxpayerId,title,dataType,eventLevel};
+        return new String[]{satparty_fzcId,authority,body,eventName,eventResult,legalRepresentative,lrIdcard,pname,postTime,sortTime,taxpayerId,title,dataType,eventLevel};
     }
     /**
      * 将satparty_chufa对象中的值转为数组，与CVS文件的title顺序一致
@@ -154,8 +150,8 @@ public class Object2ArrayUtils {
         String title = entity.getTitle();
         String dataType = entity.getDataType();
         String eventLevel = entity.getEventLevel();
-        return new String[]{satparty_chufaId,authority,body,eventResult,legalRepresentative,lrIdcard,money,pname,postTime,sortTime
-                ,taxpayerId,title,dataType,eventLevel};
+        String eventName = entity.getEventName();
+        return new String[]{satparty_chufaId,authority,body,eventResult,legalRepresentative,lrIdcard,money,pname,postTime,sortTime,taxpayerId,title,dataType,eventLevel,eventName};
     }
     /**
      * 将zxgg对象中的值转为数组，与CVS文件的title顺序一致
@@ -177,8 +173,9 @@ public class Object2ArrayUtils {
         String eventLevel = entity.getEventLevel();
         String caseNoKword = entity.getCaseNoKword();
         String courtTypeS = entity.getCourtTypeS();
-        return new String[]{zxggId,address,body,caseNo,closeDate,court,execMoney,idcardNo,pname,proposer,sortTime,title,dataType,eventLevel,
-                caseNoKword,courtTypeS};
+        String matchRatio = entity.getMatchRatio();
+        return new String[]{zxggId,address,body,caseNo,closeDate,court,execMoney,idcardNo,pname,proposer,sortTime,title,
+                dataType,matchRatio,eventLevel,caseNoKword ,courtTypeS};
     }
 
     /**
@@ -200,8 +197,7 @@ public class Object2ArrayUtils {
         String money = entity.getMoney();
         String eventLevel = entity.getEventLevel();
         String dataType = entity.getDataType();
-        return new String[]{sifacdkId,body,sortTime,eventDate,objectName,court,pname,title,action,caseNo,objectType,postTime,money,eventLevel,
-                dataType};
+        return new String[]{sifacdkId,body,sortTime,eventDate,objectName,court,pname,title,action,caseNo,objectType,postTime,money,eventLevel,dataType};
     }
     /**
      * 将shixin对象中的值转为数组，与CVS文件的title顺序一致
@@ -220,12 +216,13 @@ public class Object2ArrayUtils {
         String yiwu = entity.getYiwu();
         String yjCode = entity.getYjCode();
         String dataType = entity.getDataType();
+        String matchRatio = entity.getMatchRatio();
         String eventLevel = entity.getEventLevel();
         String lxqk = entity.getLxqk();
         String caseNoKword = entity.getCaseNoKword();
         String courtTypeS = entity.getCourtTypeS();
-        return new String[]{shixinId,age,caseNo,court,jtqx,pname,idcardNo,postTime,province,sortTime,yiwu,yjCode,dataType,eventLevel,
-                lxqk,caseNoKword,courtTypeS};
+        return new String[]{shixinId,age,caseNo,court,jtqx,pname,idcardNo,postTime,province,sortTime,yiwu,
+                yjCode,dataType,matchRatio,eventLevel,lxqk,caseNoKword ,courtTypeS};
     }
 
     /**
@@ -246,8 +243,8 @@ public class Object2ArrayUtils {
         String eventLevel = entity.getEventLevel();
         String caseNoKword = entity.getCaseNoKword();
         String courtTypeS = entity.getCourtTypeS();
-        return new String[]{ktggId,body,caseCause,caseNo,court,defendant,plaintiff,pname,sortTime,title,dataType,eventLevel,
-                caseNoKword,courtTypeS};
+        String matchRatio = entity.getMatchRatio();
+        return new String[]{ktggId,body,caseCause,caseNo,court,defendant,plaintiff,pname,sortTime,title,dataType,eventLevel,matchRatio,caseNoKword ,courtTypeS};
     }
 
     /**
@@ -266,7 +263,8 @@ public class Object2ArrayUtils {
         String eventLevel = entity.getEventLevel();
         String caseNo = entity.getCaseNo();
         String caseNoKword = entity.getCaseNoKword();
-        return new String[]{fyggId,body,court,layout,pname,sortTime,title,dataType,ggType,eventLevel,caseNo,caseNoKword};
+        String matchRatio = entity.getMatchRatio();
+        return new String[]{fyggId,body,court,layout,pname,sortTime,title,dataType,matchRatio,ggType,eventLevel,caseNo,caseNoKword};
     }
 
 
@@ -274,13 +272,14 @@ public class Object2ArrayUtils {
      * 将cpws对象中的值转为数组，与CVS文件的title顺序一致
      */
     public static String[] cpwsObject2Array(Cpws entity){
-        String bgtId = entity.getCpwsId();
+
+        String cpwsId = entity.getCpwsId();
         String body = entity.getBody();
         String caseCause = entity.getCaseCause();
         String caseNo = entity.getCaseNo();
         String court = entity.getCourt();
-        String idcardNo = entity.getJudge();
-        String pname = entity.getJudgeResult();
+        String judge = entity.getJudge();
+        String judgeResult = entity.getJudgeResult();
         String sortTime = entity.getSortTime();
         String title = entity.getTitle();
         String trialProcedure = entity.getTrialProcedure();
@@ -292,8 +291,10 @@ public class Object2ArrayUtils {
         String courtTypeS = entity.getCourtTypeS();
         String caseNoKword = entity.getCaseNoKword();
         String caseTypeS = entity.getCaseTypeS();
-        return new String[]{bgtId,body,caseCause,caseNo,court,idcardNo,pname,sortTime,title,trialProcedure,yiju,dataType,
-                partys+"",courtRank,eventLevel,courtTypeS,caseNoKword,caseTypeS};
+        String matchRatio = entity.getMatchRatio();
+        return new String[]{cpwsId,body,caseCause,caseNo,court,judge,judgeResult,sortTime,title,trialProcedure,yiju ,
+                dataType,partys+"",matchRatio,courtRank,eventLevel,courtTypeS,caseNoKword ,caseTypeS};
+
     }
 
     /**
@@ -316,8 +317,8 @@ public class Object2ArrayUtils {
         String execMoney = entity.getExecMoney();
         String caseNoKword = entity.getCaseNoKword();
         String courtTypeS = entity.getCourtTypeS();
-        return new String[]{bgtId,address,body,caseCause,caseNo,court,idcardNo,pname,proposer,sortTime,yiju,dataType,
-                eventLevel,execMoney,caseNoKword,courtTypeS};
+        String matchRatio = entity.getMatchRatio();
+        return new String[]{bgtId,address,body,caseCause,caseNo,court,idcardNo,pname,proposer,sortTime,yiju,dataType,matchRatio,eventLevel,execMoney,caseNoKword ,courtTypeS};
     }
 
 
@@ -339,8 +340,8 @@ public class Object2ArrayUtils {
         String eventLevel = entity.getEventLevel();
         String caseNoKword = entity.getCaseNoKword();
         String courtTypeS = entity.getCourtTypeS();
-        return new String[]{ajlcId,body,caseCause,caseNo,court,organizer,pname,sortTime,dataType,ajlcStatusS,eventLevel,
-                caseNoKword,courtTypeS};
+        String matchRatio = entity.getMatchRatio();
+        return new String[]{ajlcId,body,caseCause,caseNo,court,organizer,pname,sortTime,dataType,ajlcStatusS,matchRatio,eventLevel,caseNoKword ,courtTypeS};
     }
 
 
@@ -361,8 +362,7 @@ public class Object2ArrayUtils {
         String standard = entity.getStandard();
         String station = entity.getStation();
         String dataType = entity.getDataType();
-        return new String[]{epbparty_zxjcId,creditNo,dealWay,dealWhere,density,eventResult,monitorWay,pname,pollutant,
-                sortTime,standard,station,dataType};
+        return new String[]{epbparty_zxjcId,creditNo,dealWay,dealWhere,density,eventResult,monitorWay,pname,pollutant,sortTime,standard,station,dataType};
     }
 
 
@@ -375,7 +375,7 @@ public class Object2ArrayUtils {
         String dataType = entity.getDataType();
         String epbparty_jkqyId = entity.getEpbparty_jkqyId();
         String pname = entity.getPname();
-        return new String[]{eventName,eventType,dataType,epbparty_jkqyId,pname};
+        return new String[]{epbparty_jkqyId,eventName,eventType,pname,dataType};
     }
 
     /**
@@ -395,11 +395,10 @@ public class Object2ArrayUtils {
         String legalRepresentative = entity.getLegalRepresentative();
         String money = entity.getMoney();
         String pname = entity.getPname();
-        Date postTime = entity.getPostTime();
+        String postTime = entity.getPostTime();
         Long sortTime = entity.getSortTime();
         String title = entity.getTitle();
-        return new String[]{authority,body,caseNo,dataType,epbpartyId,eventLevel,eventName,eventResult,eventYiju,
-                legalRepresentative,money,pname,postTime+"",sortTime+"",title};
+        return new String[]{epbpartyId,authority,body,caseNo,eventResult,eventYiju,legalRepresentative,money,pname,postTime,sortTime+"",title,dataType,eventLevel,eventName};
     }
 
 

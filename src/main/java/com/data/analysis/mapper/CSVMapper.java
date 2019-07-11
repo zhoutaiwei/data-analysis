@@ -5,17 +5,12 @@ import com.data.analysis.scheduled.TimeScheduled;
 import com.data.analysis.utils.FileUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Repository;
-import sun.applet.Main;
 
-import javax.annotation.Resource;
 import java.io.*;
 import java.nio.charset.Charset;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.List;
 
 /**
  * 写入CSV文件
@@ -33,14 +28,11 @@ public class CSVMapper {
      * @param values
      */
 
-    public void writeCSVFile(String path,String title,String[] values){
+    public synchronized void writeCSVFile(String path,String title,String[] values){
         //获取任务执行时的时间，用于拼接文件路径
         Long currentTime = TimeScheduled.currentTime;
-        //获取月份
-        String month = CSVMapper.getMonthByDateStamp(currentTime);
         //获取日
         String day=CSVMapper.getDayByDateStamp(currentTime);
-        path = path.replace("#month",month);
         path = path.replace("#day",day);
         CsvWriter cw = null;
         String[] header = title.split(",");
@@ -79,7 +71,7 @@ public class CSVMapper {
      * @return
      */
     public static   String getDayByDateStamp(Long time){
-        SimpleDateFormat format = new SimpleDateFormat("dd");
+        SimpleDateFormat format = new SimpleDateFormat("yyyyMMdd");
         return format.format(new Date(time));
     }
 

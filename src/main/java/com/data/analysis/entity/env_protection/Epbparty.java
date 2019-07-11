@@ -20,7 +20,7 @@ public class Epbparty {
     private String   legalRepresentative; // 企业法定代表人
     private String   money; // 处罚金额
     private String   pname; // 企业名称
-    private Date postTime; // 发布时间
+    private String postTime; // 发布时间
     private Long   sortTime; // 处罚时间
     private String   title; // 标题
     private String   dataType; // 数据类型
