@@ -19,7 +19,7 @@ csv:
     satparty-fzc-path: /data/fahai/data/#day/#type/satparty-fzc.csv
     satparty-fzc-title: satparty_fzcId,authority,body,eventName,eventResult,legalRepresentative,lrIdcard,pname,postTime,sortTime,taxpayerId,title,dataType,eventLevel
     cpws-path: /data/fahai/data/#day/#type/cpws.csv
-    cpws-title: cpwsId,body,caseCause,caseNo,court,judge,judgeResult,sortTime,title,trialProcedure,yiju ,dataType,partys+"",matchRatio,courtRank,eventLevel,courtTypeS,caseNoKword ,caseTypeS
+    cpws-title: cpwsId,body,caseCause,caseNo,court,judge,judgeResult,sortTime,title,trialProcedure,yiju,dataType,partys,matchRatio,courtRank,eventLevel,courtTypeS,caseNoKword ,caseTypeS
     partys-dictionary-path: /data/fahai/data/#day/#type/partys-dictionary.csv
     partys-dictionary-title: cpwsId,partyType,pname,birthday,partyPosition,partyTitle
     ktgg-path: /data/fahai/data/#day/#type/ktgg.csv
