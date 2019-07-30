@@ -25,5 +25,10 @@ public class CompanyQueryServiceTest {
     public void  getCustomerGroupList(){
         httpService.getCustomerGroupList();
     }
-
+    @Test
+    public void  diaryTest(){
+        log.info("info diary");
+        log.warn("warn diary");
+        log.error("error diary");
+    }
 }

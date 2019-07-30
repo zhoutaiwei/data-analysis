@@ -1,6 +1,6 @@
 spring:
   profiles:
-    active: local
+    active: dev
   datasource:
     url: jdbc:postgresql://192.168.1.1:5432/postgre
  #   url: jdbc:mysql://hadoop102:3306/company_case?useUnicode=true&characterEncoding=UTF-8

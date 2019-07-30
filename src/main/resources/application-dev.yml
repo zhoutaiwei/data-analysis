@@ -2,25 +2,25 @@ csv:
   file:
     epbparty-path: /data/fahai/data/#day/#type/epbparty.csv
     epbparty-title: epbpartyId,authority,body,caseNo,eventResult,eventYiju,legalRepresentative,money,pname,postTime,sortTime,,dataType,eventLevel,eventName
-    epbparty-jkqy-path: /data/fahai/data/#day/#type/epbparty-jkqy.csv
+    epbparty-jkqy-path: /data/fahai/data/#day/#type/epbparty_jkqy.csv
     epbparty-jkqy-title: epbparty_jkqyId,eventName,eventType,pname,dataType
-    epbparty-zxjc-path: /data/fahai/data/#day/#type/epbparty-zxjc.csv
+    epbparty-zxjc-path: /data/fahai/data/#day/#type/epbparty_zxjc.csv
     epbparty-zxjc-title: epbparty_zxjcId,creditNo,dealWay,dealWhere,density,eventResult,monitorWay,pname,pollutant,sortTime,standard,station,dataType
-    satparty-qs-path: /data/fahai/data/#day/#type/satparty-qs.csv
+    satparty-qs-path: /data/fahai/data/#day/#type/satparty_qs.csv
     satparty-qs-title: satparty_qsId,authority,body,eventName,legalRepresentative,lrIdcard,money,pname,postTime,sortTime,taxCategory,taxpayerId,title,dataType,authorityRank,eventLevel
-    satparty-chufa-path: /data/fahai/data/#day/#type/satparty-chufa.csv
+    satparty-chufa-path: /data/fahai/data/#day/#type/satparty_chufa.csv
     satparty-chufa-title: satparty_chufaId,authority,body,eventResult,legalRepresentative,lrIdcard,money,pname,postTime,sortTime,taxpayerId,title,dataType,eventLevel,eventName
-    satparty-xin-path: /data/fahai/data/#day/#type/satparty-xin.csv
+    satparty-xin-path: /data/fahai/data/#day/#type/satparty_xin.csv
     satparty-xin-title: satparty_xinId,authority,body,eventResult,legalRepresentative,pname,postTime,sortTime,taxpayerId,title,dataType,eventLevel
-    satparty-reg-path: /data/fahai/data/#day/#type/satparty-reg.csv
+    satparty-reg-path: /data/fahai/data/#day/#type/satparty_reg.csv
     satparty-reg-title: satparty_regId,authority,body,eventName,eventResult,legalRepresentative,lrIdcard,pname,postTime,sortTime,taxpayerId,title,dataType,eventLevel
-    satparty-xuke-path: /data/fahai/data/#day/#type/satparty-xuke.csv
+    satparty-xuke-path: /data/fahai/data/#day/#type/satparty_xuke.csv
     satparty-xuke-title: satparty_xukeId,authority,body,eventName,legalRepresentative,pname,postTime,sortTime,taxpayerId,title,dataType,eventLevel
-    satparty-fzc-path: /data/fahai/data/#day/#type/satparty-fzc.csv
+    satparty-fzc-path: /data/fahai/data/#day/#type/satparty_fzc.csv
     satparty-fzc-title: satparty_fzcId,authority,body,eventName,eventResult,legalRepresentative,lrIdcard,pname,postTime,sortTime,taxpayerId,title,dataType,eventLevel
     cpws-path: /data/fahai/data/#day/#type/cpws.csv
-    cpws-title: cpwsId,body,caseCause,caseNo,court,judge,judgeResult,sortTime,title,trialProcedure,yiju,dataType,partys,matchRatio,courtRank,eventLevel,courtTypeS,caseNoKword ,caseTypeS
-    partys-dictionary-path: /data/fahai/data/#day/#type/partys-dictionary.csv
+    cpws-title: cpwsId,body,caseCause,caseNo,court,judge,judgeResult,sortTime,title,trialProcedure,yiju ,dataType,partys+"",matchRatio,courtRank,eventLevel,courtTypeS,caseNoKword ,caseTypeS
+    partys-dictionary-path: /data/fahai/data/#day/#type/partys_dictionary.csv
     partys-dictionary-title: cpwsId,partyType,pname,birthday,partyPosition,partyTitle
     ktgg-path: /data/fahai/data/#day/#type/ktgg.csv
     ktgg-title: ktggId,body,caseCause,caseNo,court,defendant,plaintiff,pname,sortTime,title,dataType,eventLevel,matchRatio,caseNoKword ,courtTypeS

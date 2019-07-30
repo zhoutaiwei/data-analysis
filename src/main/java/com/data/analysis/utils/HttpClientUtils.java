@@ -107,6 +107,8 @@ public class HttpClientUtils
                 } catch (Exception e) {
                     log.error("json解析错误",e);
                 }
+            }else {
+                log.info("请求失败！！！状态码:{}",response.getStatusLine().getStatusCode() );
             }
         } catch (Exception e) {
             //500代表请求失败
@@ -120,7 +122,7 @@ public class HttpClientUtils
                 }
                 httpClient.close();
             } catch (IOException e) {
-                e.printStackTrace();
+                log.error("http連接關閉出錯");
             }
         }
         logUtils.writeLog(requestUrl,status,timeConsuming,errorMessage,requestDate);

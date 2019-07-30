@@ -23,9 +23,8 @@ public class TimeScheduled {
     AsyncTask asyncTask;
     public static Long currentTime;
 
-    // 定义每过10秒执行任务
-   @Scheduled(fixedRate = 10*3600*1000,initialDelay = 10*1000)
-   // @Scheduled(cron = "0 0 23 * * ?")
+   //@Scheduled(fixedRate = 10*3600*1000,initialDelay = 10)
+    @Scheduled(cron = "0 0 23 * * ?")
     //@Scheduled(cron = "0 50 9 * * ?")
     public void ExecuteCompanyCaseTask() throws Exception {
         log.info("开始执行处理任务...");
